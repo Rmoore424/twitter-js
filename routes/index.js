@@ -7,4 +7,12 @@ router.get('/', function (req, res) {
   res.render( 'index', { title: 'Twitter.js', tweets: tweets } );
 });
 
+router.get("/users/:name", function(req, res) {
+	var name = req.params.name;
+	console.log(name);
+	console.log(tweetBank.list());
+	var tweets = tweetBank.find({name: name});
+	res.render("index", {title: "Twitter.js - Posts by " +name, tweets: tweets, name: name });
+})
+
 module.exports = router;

@@ -53,6 +53,7 @@ code {
 }
 .content {
   margin-left: 60px;
+  list-style-type: none;
 }
 .content .by {
   font-weight: bold;
