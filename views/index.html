@@ -10,6 +10,19 @@
       <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
       <b>{{name}}</b><br>
       100 followers
+
+      {% if showForm %}
+  <form action="/submit" method="POST">
+    <h3>Enter New Tweet</h3>
+    <label for="name_field" class="tweet-label">Name:</label></br>
+    <input name="name" type="text" id="name_field" class="tweet-info" value="{{name}}" /></br>
+
+    <label for="text_field" class="tweet-label">Text:</label>
+    <input name="text" type="text" id="text_field" class="tweet-info" style="width: 300px;" />
+
+    <input type="submit" value="Submit" />
+  </form>
+{% endif %}
     </div>
     <div class="col-md-9">
     
@@ -19,7 +32,7 @@
       	<div class="tweetbox">
       		<img />
       		<li class="content by"><a href="/users/{{tweet.name}}">{{tweet.name}}</a></li>
-        	<li class="content">{{tweet.text}}</li>
+        	<li class="content"><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.text}}</a></li>
         	<li class="content"><a href="#">Re-tweet</a></li>
         </div>
       {% endfor %}

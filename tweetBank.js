@@ -1,9 +1,9 @@
 var _ = require("underscore");
 
-var data = [{name: "Nimit Maru", text: "teacher guy"}, {name: "Rich Moore", text: "student"}];
+var data = [];
 
-var add = function (name, text) {
-  data.push({ name: name, text: text });
+var add = function (name, text, id) {
+  data.push({ name: name, text: text, id: id});
 };
 
 var list = function () {
@@ -31,8 +31,8 @@ var getFakeTweet = function() {
   return "Fullstack Academy is " + randArrayEl(awesome_adj) + "! The instructors are just so " + randArrayEl(awesome_adj) + ". #fullstacklove #codedreams";
 };
 
-for(var i=0; i<3; i++) {
-  module.exports.add( getFakeName(), getFakeTweet() );
+for(var i=0; i<5; i++) {
+  module.exports.add( getFakeName(), getFakeTweet(), i.toString());
 }
 
 // var tweets = module.exports.list();
@@ -40,3 +40,6 @@ for(var i=0; i<3; i++) {
 
 // var findPerson = module.exports.find({name: "Nimit Maru"});
 // console.log(findPerson);
+
+//var findPerson = module.exports.find({id: 2});
+//console.log(findPerson);

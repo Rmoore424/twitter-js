@@ -58,3 +58,11 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+.tweet-label {
+  margin-top: 15px;
+}
+
+.tweet-info {
+  margin-bottom: 15px;
+}
